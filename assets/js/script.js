@@ -8,20 +8,20 @@ function toggleMenu() {
   particlesJS("particles-js", {
     particles: {
       number: {
-        value: 80, // Nombre de particules
+        value: 80, 
         density: {
           enable: true,
-          value_area: 800 // Aire d'effet des particules
+          value_area: 800 
         }
       },
       color: {
-        value: "#514b82" // Couleur des particules
+        value: "#514b82" 
       },
       shape: {
-        type: "circle", // Forme des particules
+        type: "circle",
       },
       opacity: {
-        value: 0.5, // Opacité des particules
+        value: 0.5, 
         anim: {
           enable: true,
           speed: 1,
@@ -30,7 +30,7 @@ function toggleMenu() {
         }
       },
       size: {
-        value: 3, // Taille des particules
+        value: 3, 
         anim: {
           enable: true,
           speed: 40,
@@ -39,16 +39,16 @@ function toggleMenu() {
         }
       },
       line_linked: {
-        enable: true, // Lignes entre les particules
+        enable: true, 
         distance: 150,
-        color: "#514b82", // Couleur des lignes
+        color: "#514b82",
         opacity: 0.4,
         width: 1
       },
       move: {
         enable: true,
         speed: 6,
-        direction: "none", // Direction des particules
+        direction: "none",
         random: true,
         straight: false,
         out_mode: "out",
@@ -58,15 +58,15 @@ function toggleMenu() {
       }
     },
     interactivity: {
-      detect_on: "window", // Détection des interactions
+      detect_on: "window", 
       events: {
         onhover: {
           enable: true,
-          mode: "repulse" // Effet de répulsion lors du survol
+          mode: "repulse" 
         },
         onclick: {
           enable: true,
-          mode: "push" // Effet de "pousser" lors d'un clic
+          mode: "push" 
         }
       },
       modes: {
