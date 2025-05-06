@@ -6,13 +6,11 @@
   --font-base: "Karla";
 
   /* Colors */
-  --color-primary: #d3d5fd;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #15f5ba;
-  --color-secondary-foreground: #0b0b0b;
-
-  --color-background: #444444;
-  --color-background-accent: #15f5ba;
+  --color-primary: #d3d5fd; /* purple */
+  --color-primary-foreground: #fafafa; /* white */
+  --color-secondary: #15f5ba; /* green */
+  --color-secondary-foreground: #0b0b0b; /* black */
+  --color-background: #444444; /* gray */
 }
 
 @layer base {
