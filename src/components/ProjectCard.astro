@@ -1,0 +1,22 @@
+---
+const { title, slug, image, description } = Astro.props;
+---
+
+<a
+  href={`/projects/${slug}`}
+  class="group block rounded-xl overflow-hidden shadow-md bg-white hover:shadow-xl transition"
+>
+  <div class="overflow-hidden h-48">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
+    />
+  </div>
+  <div class="p-4">
+    <h2 class="text-xl font-bold text-primary transition">
+      {title}
+    </h2>
+    <p class="text-primary text-sm mt-1">{description}</p>
+  </div>
+</a>
