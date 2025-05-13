@@ -1,0 +1,15 @@
+---
+import Navigationlinks from "./Navigationlinks.astro";
+const { id } = Astro.props;
+type LinkType = {
+  url: string;
+  label: string;
+};
+const { url, label } = Astro.props;
+---
+
+<nav class="">
+  <div id={id} class="">
+    <Navigationlinks url={url} title={label} />
+  </div>
+</nav>
