@@ -2,21 +2,24 @@
 const { title, slug, image, description } = Astro.props;
 ---
 
-<a
-  href={`/projects/${slug}`}
-  class="group block rounded-xl overflow-hidden shadow-md bg-white hover:shadow-xl transition"
+<article
+  class="group relative flex flex-col h-full rounded-xl overflow-hidden shadow-md bg-secondary-background hover:shadow-xl transition focus-within:outline-2 outline-amber-400 outline-offset-4"
 >
-  <div class="overflow-hidden h-48">
+  <figure class="overflow-hidden h-100">
     <img
       src={image}
-      alt={title}
+      alt=""
       class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
     />
-  </div>
+  </figure>
   <div class="p-4">
     <h2 class="text-xl font-bold text-primary transition">
       {title}
     </h2>
     <p class="text-primary text-sm mt-1">{description}</p>
+
+    <a class="absolute inset-0" href={`/projects/${slug}`}>
+      <span class="sr-only">{`Découvrir le projet ${title}`}</span>
+    </a>
   </div>
-</a>
+</article>

@@ -1,6 +1,6 @@
 ---
 title: "Interview Pro"
-slug: "interview-pro"
+slug: "interview"
 image: "src/assets/images/Valentine-KARAS.png"
 description: "Échange avec une professionnelle du digital de chez Cartier."
 ---

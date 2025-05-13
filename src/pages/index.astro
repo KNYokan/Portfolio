@@ -1,3 +1,58 @@
 ---
+import ProjectCard from "../components/ProjectCard.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
+import { getCollection } from "astro:content";
 
+const projects = await getCollection("projects");
 ---
+
+<HomeLayout>
+  <head>
+    <title>Accueil - Paul Karas</title>
+    <meta
+      name="description"
+      content="Développeur web - Découvrez mes projets."
+    />
+  </head>
+
+  <item class="flex justify-center my-12">
+    <img
+      src="/src/assets/images/Paul-KARAS-Working.png"
+      alt="Paul Karas"
+      class="max-w-sm w-full shadow-lg"
+    />
+  </item>
+
+  <carousel class="my-16 px-4">
+    <h2 class="text-2xl font-bold text-center mb-6">Mes projets récents</h2>
+    <div class="flex gap-4 overflow-x-auto pb-4">
+      {
+        projects.map((project) => {
+          const { title, image, description } = project.data;
+          const { slug } = project;
+
+          return (
+            <div class="min-w-[300px] flex-shrink-0">
+              <ProjectCard
+                title={title}
+                slug={slug}
+                image={image}
+                description={description}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </carousel>
+
+  <section class="text-center my-16 px-4">
+    <h2 class="text-2xl font-bold mb-4">Contactez-moi !</h2>
+    <a
+      href="/contact"
+      class="inline-block bg-secondary-background text-primary px-6 py-3 rounded-lg shadow hover:bg-opacity-90 transition"
+    >
+      Accéder à la page de contact
+    </a>
+  </section>
+</HomeLayout>

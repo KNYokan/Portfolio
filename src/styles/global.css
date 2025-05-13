@@ -9,8 +9,8 @@
   --color-primary: #d3d5fd; /* purple */
   --color-primary-foreground: #fafafa; /* white */
   --color-secondary: #15f5ba; /* green */
-  --color-secondary-foreground: #0b0b0b; /* black */
-  --color-background: #444444; /* gray */
+  --color-background: #0b0b0b; /* black */
+  --color-secondary-background: #444444; /* gray */
 }
 
 @layer base {
@@ -39,5 +39,6 @@ body {
   font-family: var(--font-base);
   font-size: clamp(1rem, 0.8125rem + 0.6vw, 1.15rem);
   line-height: 1.5;
-  color: var(--color-foreground);
+  background-color: var(--color-background);
+  color: var(--color-primary);
 }
