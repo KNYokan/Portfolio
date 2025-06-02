@@ -1,15 +1,29 @@
 ---
-import Navigationlinks from "./Navigationlinks.astro";
 const { id } = Astro.props;
-type LinkType = {
-  url: string;
-  label: string;
-};
-const { url, label } = Astro.props;
 ---
 
-<nav class="">
-  <div id={id} class="">
-    <Navigationlinks url={url} title={label} />
-  </div>
+<nav
+  id={id}
+  class="hidden flex-col gap-6 text-center lg:flex lg:flex-row lg:gap-6"
+>
+  <a
+    href="/"
+    class="text-3xl font-bold px-6 py-2 rounded-3xl bg-white/10 backdrop-blur-lg hover:bg-white/20 transition"
+    >Accueil</a
+  >
+  <a
+    href="/projects"
+    class="text-3xl font-bold px-6 py-2 rounded-3xl bg-white/10 backdrop-blur-lg hover:bg-white/20 transition"
+    >Projets</a
+  >
+  <a
+    href="/contact"
+    class="text-3xl font-bold px-6 py-2 rounded-3xl bg-white/10 backdrop-blur-lg hover:bg-white/20 transition"
+    >Contact</a
+  >
+  <a
+    href="/infos"
+    class="text-3xl font-bold px-6 py-2 rounded-3xl bg-white/10 backdrop-blur-lg hover:bg-white/20 transition"
+    >Infos</a
+  >
 </nav>
