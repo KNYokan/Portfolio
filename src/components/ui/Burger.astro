@@ -1,0 +1,25 @@
+---
+const { id } = Astro.props;
+---
+
+<button
+  id={id}
+  class="lg:hidden flex flex-col justify-between h-6 w-8 cursor-pointer z-50"
+  aria-label="Ouvrir le menu"
+>
+  <span class="block h-[2px] w-full bg-primary transition-all"></span>
+  <span class="block h-[2px] w-full bg-primary transition-all"></span>
+  <span class="block h-[2px] w-full bg-primary transition-all"></span>
+</button>
+
+<style>
+  #burger-toggle.is-active span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+  #burger-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  #burger-toggle.is-active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+</style>
