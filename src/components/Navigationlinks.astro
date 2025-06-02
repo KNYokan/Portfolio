@@ -1,0 +1,24 @@
+---
+const { url, title } = Astro.props;
+
+const isActive = Astro.url.pathname === url;
+---
+
+<a href={url} class=`${isActive ? 'is-active' : ''}`>
+  <span class=` ${isActive ? 'text-primary' : ''}`>{title}</span>
+</a>
+
+<style>
+  a.is-active::after {
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+</style>

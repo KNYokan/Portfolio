@@ -1,37 +1,13 @@
 ---
-import Carousel from "../components/Carousel.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
-import { getCollection } from "astro:content";
-
-const projects = await getCollection("projects");
+layout: "../layouts/HomeLayout.astro";
+title: "Bienvenue";
+description: "";
+image: "src/assets/images/";
+imgtitle: "";
+author: "Paul KARAS";
+date: "06-05-2025";
+//SEO
+metaTitle: "Page d'accueil";
+metaDescription: "Bienvenue sur la page d'accueil du Portfolio de Paul KARAS, chef de projets digitaux, développeur web.";
 ---
-
-<HomeLayout>
-  <head>
-    <title>Accueil - Paul Karas</title>
-    <meta
-      name="description"
-      content="Développeur web - Découvrez mes projets."
-    />
-  </head>
-
-  <item class="flex justify-center my-12">
-    <img
-      src="/src/assets/images/Paul-KARAS-Working.png"
-      alt="Paul Karas"
-      class="max-w-sm w-full shadow-lg"
-    />
-  </item>
-
-  <Carousel {projects} />
-
-  <section class="text-center my-16 px-4">
-    <h2 class="text-2xl font-bold mb-4">Contactez-moi !</h2>
-    <a
-      href="/contact"
-      class="inline-block bg-secondary-background text-primary px-6 py-3 rounded-lg shadow hover:bg-opacity-90 transition"
-    >
-      Accéder à la page de contact
-    </a>
-  </section>
-</HomeLayout>
