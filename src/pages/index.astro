@@ -1,13 +1,29 @@
 ---
+import Carousel from "../components/Carousel.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
-layout: "../layouts/HomeLayout.astro";
-title: "Bienvenue";
-description: "";
-image: "src/assets/images/";
-imgtitle: "";
-author: "Paul KARAS";
-date: "06-05-2025";
-//SEO
-metaTitle: "Page d'accueil";
-metaDescription: "Bienvenue sur la page d'accueil du Portfolio de Paul KARAS, chef de projets digitaux, développeur web.";
+
+// layout: "../layouts/HomeLayout.astro";
+// title: "Bienvenue";
+// description: "";
+// image: "src/assets/images/";
+// imgtitle: "";
+// author: "Paul KARAS";
+// date: "06-05-2025";
+// metaTitle: "Page d'accueil";
+// metaDescription: "Bienvenue sur la page d'accueil du Portfolio de Paul KARAS, chef de projets digitaux, développeur web.";
 ---
+
+<HomeLayout title="Acceuil">
+  <main class="accueil">
+    <section class="intro">
+      <h1>Hey, je suis Paul KARAS</h1>
+      <h2>
+        Étudiant en Développement Web, pour devenir Chef de Projets Digitaux
+      </h2>
+      <h3>
+        Actuellement en recherche d'une alternance pour septembre 2025 à Rouen
+      </h3>
+    </section>
+    <Carousel />
+  </main>
+</HomeLayout>
