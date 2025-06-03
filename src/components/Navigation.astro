@@ -7,7 +7,10 @@ type NavItemType = {
 };
 ---
 
-<nav id={id}>
+<nav
+  id={id}
+  class="flex flex-col items-center gap-8 text-center lg:flex-row lg:gap-8"
+>
   {
     items.map((item: NavItemType) => (
       <a

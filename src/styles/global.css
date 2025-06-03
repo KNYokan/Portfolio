@@ -22,15 +22,18 @@
     padding-bottom: 1rem;
     padding-top: 1em;
   }
+
   h1 {
-    font-size: clamp(1.7rem, 0.075rem + 5.2vw, 3rem);
+    font-size: clamp(1.05rem, 0.047rem + 3.25vw, 1.875rem);
   }
+
   h2 {
-    font-size: clamp(1.3rem, 0.075rem + 5.2vw, 2.3rem);
+    font-size: clamp(0.8125rem, 0.047rem + 3.25vw, 1.4375rem);
     font-weight: normal;
   }
+
   h3 {
-    font-size: clamp(1.05rem, 0.075rem + 5.2vw, 1.9rem);
+    font-size: clamp(0.65625rem, 0.047rem + 3.25vw, 1.1875rem);
     font-weight: normal;
   }
 }
