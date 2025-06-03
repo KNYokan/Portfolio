@@ -3,9 +3,10 @@ const { id } = Astro.props;
 ---
 
 <button
-  id={id}
+  id="burger-toggle"
   class="lg:hidden flex flex-col justify-between h-6 w-8 cursor-pointer z-50"
   aria-label="Ouvrir le menu"
+  aria-expanded="false"
 >
   <span class="block h-[2px] w-full bg-primary transition-all"></span>
   <span class="block h-[2px] w-full bg-primary transition-all"></span>
