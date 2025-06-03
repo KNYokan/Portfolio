@@ -2,6 +2,13 @@
 import Logo from "./Logo.astro";
 import Navigation from "./Navigation.astro";
 import Burger from "./ui/Burger.astro";
+
+const navItems = [
+  { label: "Accueil", url: "/" },
+  { label: "Projets", url: "/projects" },
+  { label: "Contact", url: "/contact" },
+  { label: "Infos", url: "/about" },
+];
 ---
 
 <header
@@ -12,7 +19,7 @@ import Burger from "./ui/Burger.astro";
     <a href="/" class="block w-[150px] lg:w-[200px]">
       <Logo />
     </a>
-    <Navigation id="main-nav" />
+    <Navigation id="main-nav" items={navItems} />
     <Burger id="burger-toggle" />
   </div>
 
