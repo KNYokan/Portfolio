@@ -1,6 +1,7 @@
 ---
 import Carousel from "../components/Carousel.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
+import Particles from "../components/Particles.astro";
 
 // layout: "../layouts/HomeLayout.astro";
 // title: "Bienvenue";
@@ -13,17 +14,31 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 // metaDescription: "Bienvenue sur la page d'accueil du Portfolio de Paul KARAS, chef de projets digitaux, développeur web.";
 ---
 
-<HomeLayout title="Acceuil">
+<HomeLayout title="Accueil">
   <main class="accueil">
-    <section class="intro">
-      <h1>Hey, je suis Paul KARAS</h1>
-      <h2>
+    <Particles class="z-1" />
+    <section
+      class="intro text-center flex flex-col items-center px-4 pt-12 sm:pt-24 md:pt-28"
+    >
+      <h1 class="text-3xl md:text-4xl font-bold max-w-2xl">
+        Hey, je suis Paul KARAS
+      </h1>
+      <h2 class="text-lg md:text-xl mt-4">
         Étudiant en Développement Web, pour devenir Chef de Projets Digitaux
       </h2>
-      <h3>
+      <h3 class="text-base mt-2">
         Actuellement en recherche d'une alternance pour septembre 2025 à Rouen
       </h3>
+
+      <img
+        src="src/assets/images/Paul-KARAS-Working.png"
+        alt="Paul Karas"
+        class="mt-12 w-44 sm:w-40 md:w-76 max-w-full object-cover rounded-xl shadow-lg"
+      />
     </section>
-    <Carousel />
+
+    <div class="mt-16 sm:mt-20 md:mt-24">
+      <Carousel />
+    </div>
   </main>
 </HomeLayout>
