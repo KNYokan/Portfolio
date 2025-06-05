@@ -1,7 +1,7 @@
 ---
 title: "Kart Explorer"
 slug: "kart-explorer"
-image: "src/assets/images/Kart-Explorer.png"
+image: "/images/Kart-Explorer.png"
 description: "Compétition alliant Mario Kart en ligne et karting sur piste réelle."
 ---
 

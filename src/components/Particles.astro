@@ -2,50 +2,31 @@
 
 ---
 
-<div id="particles-js" class="absolute inset-0 -z-10"></div>
+<div id="particles-js" class="fixed inset-0 -z-10"></div>
 
 <script src="/particles.min.js" is:inline></script>
+
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     if (window.particlesJS) {
       particlesJS("particles-js", {
         particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: "#514b82",
-          },
-          shape: {
-            type: "circle",
-          },
+          number: { value: 100, density: { enable: true, value_area: 1000 } },
+          color: { value: "#514b82" },
+          shape: { type: "circle" },
           opacity: {
-            value: 0.5,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false,
-            },
+            value: 0.9,
+            anim: { enable: true, speed: 1, opacity_min: 0.9, sync: false },
           },
           size: {
-            value: 3,
-            anim: {
-              enable: true,
-              speed: 40,
-              size_min: 0.1,
-              sync: false,
-            },
+            value: 2,
+            anim: { enable: true, speed: 40, size_min: 0.9, sync: false },
           },
           line_linked: {
             enable: true,
-            distance: 150,
+            distance: 200,
             color: "#514b82",
-            opacity: 0.4,
+            opacity: 0.9,
             width: 1,
           },
           move: {
@@ -55,47 +36,27 @@
             random: true,
             straight: false,
             out_mode: "out",
-            attract: {
-              enable: false,
-            },
+            attract: { enable: false },
           },
         },
         interactivity: {
           detect_on: "canvas",
           events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
           },
           modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1,
-              },
-            },
+            grab: { distance: 400, line_linked: { opacity: 1 } },
             bubble: {
               distance: 250,
               size: 0,
               duration: 2,
-              opacity: 0.8,
+              opacity: 1,
               speed: 3,
             },
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
+            repulse: { distance: 100, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
           },
         },
         retina_detect: true,

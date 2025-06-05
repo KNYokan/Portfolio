@@ -1,8 +1,8 @@
 ---
-
+import Logo from "./Logo.astro";
 ---
 
-<footer class="bg-secondary-background/20 text-white py-8 px-6">
+<footer class="bg-background/80 text-white py-8 px-6">
   <div
     class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8"
   >
@@ -11,21 +11,6 @@
       <p>Portfolio réalisé avec Astro et Tailwind CSS.</p>
     </div>
 
-    <button class="text-center hover:scale-105 transition duration-300">
-      <a
-        href="src/assets/images/pdf/CV Paul KARAS 01:25.pdf"
-        class="text-white
-        px-6 py-2 rounded-full shadow"
-        download
-      >
-        Télécharger mon CV
-      </a>
-    </button>
-
-    <logo class="w-[100px]">
-      <a href="/">
-        <img src="" alt="Logo Paul Karas" class="w-full h-auto" />
-      </a>
-    </logo>
+    <Logo />
   </div>
 </footer>
