@@ -1,7 +1,6 @@
 ---
-import Carousel from "../components/Carousel.astro";
+import Carrousel from "../components/Carrousel.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
-import Particles from "../components/Particles.astro";
 
 // layout: "../layouts/HomeLayout.astro";
 // title: "Bienvenue";
@@ -16,7 +15,6 @@ import Particles from "../components/Particles.astro";
 
 <HomeLayout title="Accueil">
   <main class="accueil">
-    <Particles class="z-1" />
     <section
       class="intro text-center flex flex-col items-center px-4 pt-12 sm:pt-24 md:pt-28"
     >
@@ -31,14 +29,12 @@ import Particles from "../components/Particles.astro";
       </h3>
 
       <img
-        src="src/assets/images/Paul-KARAS-Working.png"
+        src="/images/Paul-KARAS-Working.png"
         alt="Paul Karas"
         class="mt-12 w-44 sm:w-40 md:w-76 max-w-full object-cover rounded-xl shadow-lg"
       />
     </section>
-
-    <div class="mt-16 sm:mt-20 md:mt-24">
-      <Carousel />
-    </div>
+    <Carrousel />
+    <div class="mt-16 sm:mt-20 md:mt-24"></div>
   </main>
 </HomeLayout>

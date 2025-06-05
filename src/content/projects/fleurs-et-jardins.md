@@ -1,7 +1,7 @@
 ---
 title: "Fleurs et Jardins"
 slug: "fleurs-et-jardins"
-image: "src/assets/images/Salon-code.png"
+image: "/images/Salon-code.png"
 description: "Refonte d’un site associatif en Astro pour l’événement de jardinage du Vaudreuil."
 ---
 

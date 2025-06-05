@@ -3,17 +3,17 @@ const { title, slug, image, description } = Astro.props;
 ---
 
 <article
-  class="group w-100 relative flex flex-col h-full rounded-xl overflow-hidden shadow-md mt-2 bg-secondary-background hover:shadow-xl transition focus-within:outline-2 outline-primary outline-offset-4"
+  class="group relative flex flex-col h-full rounded-xl overflow-hidden shadow-md bg-secondary-background hover:shadow-xl transition duration-300"
 >
-  <figure class="overflow-hidden h-70">
+  <figure class="overflow-hidden h-[280px]">
     <img
       src={image}
-      alt=""
-      class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
+      alt={`Image du projet ${title}`}
+      class="w-full h-90 object-cover transition-transform duration-300 group-hover:scale-105"
     />
   </figure>
   <div class="p-4">
-    <h2 class="text-xl font-bold text-primary transition">
+    <h2 class="text-lg font-bold text-primary group-hover:underline">
       {title}
     </h2>
     <p class="text-primary text-sm mt-1">{description}</p>

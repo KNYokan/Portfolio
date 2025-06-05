@@ -1,7 +1,7 @@
 ---
 title: "Ex'Press"
 slug: "express"
-image: "src/assets/images/express1.png"
+image: "/images/express1.png"
 description: "Site d’avis cinématographique avec notation et commentaires."
 ---
 

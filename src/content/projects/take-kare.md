@@ -1,7 +1,7 @@
 ---
 title: "Take Kare"
 slug: "take-kare"
-image: "src/assets/images/Dices.png"
+image: "/images/Dices.png"
 description: "Création d’un produit innovant pour la marque Take Kare."
 ---
 
