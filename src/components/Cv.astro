@@ -1,3 +1,154 @@
 ---
-
+const cvData = [
+  {
+    image: "/images/CV Paul KARAS 01:25.png",
+    pdf: "/images/pdf/CV Paul KARAS 01:25.pdf",
+  },
+  {
+    image: "/images/CV Paul KARAS 01:25_bright.png",
+    pdf: "/images/pdf/CV Paul KARAS 01:25_bright.pdf",
+  },
+  {
+    image: "/images/CV Paul KARAS 01:.png",
+    pdf: "/images/pdf/CV Paul KARAS 01:25_dark_photo.pdf",
+  },
+];
 ---
+
+<div class="w-full max-w-6xl mx-auto py-16 px-4 text-center relative">
+  <h2 class="text-2xl font-bold mb-8">Mes CV</h2>
+
+  <div
+    id="cv-carousel"
+    class="relative h-[320px] sm:h-[400px] md:h-[480px] lg:h-[520px] flex items-center justify-center"
+  >
+    {
+      cvData.map((cv, index) => (
+        <img
+          src={cv.image}
+          alt={`CV Paul KARAS ${index + 1}`}
+          class="cv-item absolute cursor-pointer rounded-xl shadow-lg"
+          data-index={index}
+        />
+      ))
+    }
+  </div>
+
+  <div class="mt-8">
+    <a
+      id="cv-download"
+      href={cvData[0].pdf}
+      download
+      class="inline-block bg-primary text-secondary-background font-semibold px-6 py-2 rounded hover:bg-opacity-90 transition"
+    >
+      Télécharger ce CV
+    </a>
+  </div>
+
+  <style>
+    .cv-item {
+      left: 50%;
+      transform: translateX(-50%) scale(0.5);
+      opacity: 0.6;
+      z-index: 1;
+      width: 160px;
+    }
+
+    .cv-item[data-position="left"] {
+      transform: translateX(-120%) scale(0.6);
+    }
+
+    .cv-item[data-position="right"] {
+      transform: translateX(20%) scale(0.6);
+    }
+
+    .cv-item.center {
+      transform: translateX(-50%) scale(0.8);
+      opacity: 1;
+      z-index: 10;
+      cursor: default;
+    }
+
+    @media (min-width: 640px) {
+      .cv-item {
+        width: 200px;
+      }
+      .cv-item[data-position="left"] {
+        transform: translateX(-150%) scale(0.6);
+      }
+      .cv-item[data-position="right"] {
+        transform: translateX(50%) scale(0.6);
+      }
+      .cv-item.center {
+        width: 225px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .cv-item {
+        width: 240px;
+      }
+      .cv-item[data-position="left"] {
+        transform: translateX(-160%) scale(0.6);
+      }
+      .cv-item[data-position="right"] {
+        transform: translateX(60%) scale(0.6);
+      }
+      .cv-item.center {
+        width: 300px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cv-item {
+        width: 280px;
+      }
+      .cv-item[data-position="left"] {
+        transform: translateX(-180%) scale(0.6);
+      }
+      .cv-item[data-position="right"] {
+        transform: translateX(80%) scale(0.6);
+      }
+      .cv-item.center {
+        width: 375px;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    const images = [...document.querySelectorAll(".cv-item")];
+    const downloadBtn = document.getElementById("cv-download");
+
+    let current = 0;
+
+    function updateCarousel() {
+      images.forEach((img, i) => {
+        img.classList.remove("center");
+        img.removeAttribute("data-position");
+
+        const pos = (i - current + images.length) % images.length;
+        if (pos === 0) img.classList.add("center");
+        else if (pos === 1) img.setAttribute("data-position", "right");
+        else if (pos === 2) img.setAttribute("data-position", "left");
+      });
+
+      downloadBtn.href = images[current].dataset.index
+        ? images[current].src
+            .replace("/images/", "/images/pdf/")
+            .replace(".png", ".pdf")
+        : "#";
+    }
+
+    images.forEach((img, i) => {
+      img.dataset.index = i;
+      img.addEventListener("click", () => {
+        if (i !== current) {
+          current = i;
+          updateCarousel();
+        }
+      });
+    });
+
+    updateCarousel();
+  </script>
+</div>
