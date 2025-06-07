@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Particles from "../components/Particles.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import Particles from "../components/Particles.astro";
   <body>
     <Particles class="z-1" />
     <Header />
+    <ThemeToggle />
     <slot />
     <Footer />
   </body>
