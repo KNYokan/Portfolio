@@ -1,0 +1,101 @@
+---
+
+---
+
+<div
+  style="position: fixed; bottom: 1rem; right: 1rem; z-index: 50; font-size: 1rem;"
+>
+  <label class="switch">
+    <input type="checkbox" id="theme-switch-toggle" />
+    <span class="slider"></span>
+  </label>
+</div>
+
+<script type="module">
+  const themes = {
+    light: {
+      "--color-primary-foreground": "#0b0b0b",
+      "--color-background": "#fafafa",
+      "--color-secondary-background": "#d3d5fd",
+      "--color-primary": "#444444",
+    },
+    dark: {
+      "--color-primary-foreground": "#fafafa",
+      "--color-background": "#0b0b0b",
+      "--color-secondary-background": "#444444",
+      "--color-primary": "#d3d5fd",
+    },
+  };
+
+  const root = document.documentElement;
+  const checkbox = document.getElementById("theme-switch-toggle");
+
+  function applyTheme(theme) {
+    Object.entries(themes[theme]).forEach(([key, value]) => {
+      root.style.setProperty(key, value);
+    });
+    localStorage.setItem("theme", theme);
+    checkbox.checked = theme === "dark";
+  }
+
+  checkbox.addEventListener("change", () => {
+    const theme = checkbox.checked ? "dark" : "light";
+    applyTheme(theme);
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("theme") || "dark";
+    applyTheme(saved);
+  });
+</script>
+
+<style>
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary-foreground);
+    transition: 0.5s;
+    border-radius: 30px;
+    border: solid 1px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    background: var(--color-primary-foreground);
+    box-shadow: inset 8px -4px 0px 0px var(--color-secondary);
+    transition: 0.5s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--color-primary-foreground);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px var(--color-secondary);
+  }
+</style>
