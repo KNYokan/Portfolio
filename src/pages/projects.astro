@@ -16,12 +16,19 @@ const projects: Project[] = await getCollection("projects");
 
   <h1 class="text-3xl font-bold text-primary text-center my-8">Mes projets</h1>
 
-  <section class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-22 p-4">
+  <section class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 p-4">
     {
       projects.map((project: Project) => {
         const { title, image, description } = project.data;
+        const { slug } = project;
+
         return (
-          <ProjectCard title={title} image={image} description={description} />
+          <ProjectCard
+            title={title}
+            image={image}
+            description={description}
+            slug={slug}
+          />
         );
       })
     }
