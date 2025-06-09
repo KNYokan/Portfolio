@@ -1,0 +1,17 @@
+{
+  "name": "cd-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.7.5",
+    "embla-carousel": "^8.6.0",
+    "particles.js": "^2.0.0"
+  }
+}

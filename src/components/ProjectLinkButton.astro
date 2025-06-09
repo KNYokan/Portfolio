@@ -1,0 +1,13 @@
+---
+const { link } = Astro.props;
+if (!link) throw new Error("Le lien est requis dans <ProjectLinkButton>");
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-primary text-secondary-background font-semibold px-4 py-2 rounded-full shadow hover:opacity-90 transition"
+>
+  Voir le projet
+</a>

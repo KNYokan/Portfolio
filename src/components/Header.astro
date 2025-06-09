@@ -1,0 +1,94 @@
+---
+import Logo from "./Logo.astro";
+import Navigation from "./Navigation.astro";
+import MobileMenu from "./ui/MobileMenu.astro";
+
+const navItems = [
+  { label: "Accueil", url: "/" },
+  { label: "Projets", url: "/projects" },
+  { label: "Infos", url: "/infos" },
+  { label: "Contact", url: "/contact" },
+];
+---
+
+<header
+  id="main-header"
+  class="sticky top-0 z-50 transition-transform duration-300 backdrop-blur-md px-6 py-4"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <a href="/" class="block w-[150px] lg:w-[200px]">
+      <Logo />
+    </a>
+    <Navigation id="main-nav" items={navItems} />
+    <button
+      id="burger-toggle"
+      class="lg:hidden flex flex-col justify-between h-6 w-8 cursor-pointer z-50"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <span class="block h-[2px] w-full bg-primary transition-all"></span>
+      <span class="block h-[2px] w-full bg-primary transition-all"></span>
+      <span class="block h-[2px] w-full bg-primary transition-all"></span>
+    </button>
+  </div>
+
+  <MobileMenu items={navItems} />
+
+  <script is:inline>
+    const header = document.getElementById("main-header");
+    const burgerMenu = document.getElementById("burger-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    const body = document.querySelector("body");
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = "translateY(-100%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+      lastScroll = currentScroll;
+    });
+
+    if (burgerMenu && mobileNav) {
+      burgerMenu.addEventListener("click", () => {
+        const isActive = burgerMenu.classList.toggle("is-active");
+        mobileNav.classList.toggle("hidden");
+        body.classList.toggle("has-menu-open");
+        if (mobileNav.classList.contain("hidden")) {
+          mobileNav.classList.remove("hidden");
+          mobileNav.classList.add("grid");
+        } else {
+          mobileNav.classList.remove("grid");
+          mobileNav.classList.add("hidden");
+        }
+        burgerMenu.setAttribute("aria-expanded", String(isActive));
+        burgerMenu.setAttribute(
+          "aria-label",
+          isActive ? "Fermer le menu" : "Ouvrir le menu"
+        );
+      });
+    }
+  </script>
+
+  <style>
+    #burger-toggle.is-active span:nth-child(1) {
+      transform: translateY(12px) rotate(45deg);
+    }
+    #burger-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    #burger-toggle.is-active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    body.has-menu-open::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+  </style>
+</header>
