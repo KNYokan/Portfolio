@@ -1,8 +1,10 @@
 ---
 title: "Ex'Press"
-slug: "express"
 image: "/images/express1.png"
+image2: "/images/express2.png"
+image3: "/images/express4.png"
 description: "Site d’avis cinématographique avec notation et commentaires."
+link: "https://github.com/louis-gratien-nws/express"
 ---
 
 # Ex'Press

@@ -1,19 +1,27 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Fonts */
+:root {
   --font-heading: "Karla";
   --font-base: "Karla";
 
-  /* Colors */
-  --color-primary: #d3d5fd; /* purple */
-  --color-primary-foreground: #fafafa; /* white */
-  --color-secondary: #15f5ba; /* green */
-  --color-background: #0b0b0b; /* black */
-  --color-secondary-background: #444444; /* gray */
+  --color-primary: #d3d5fd;
+  --color-primary-foreground: #fafafa;
+  --color-secondary: #15f5ba;
+  --color-background: #0b0b0b;
+  --color-secondary-background: #444444;
 }
 
 @layer base {
+  body {
+    font-family: var(--font-base);
+    font-size: clamp(1rem, 0.8125rem + 0.6vw, 1.15rem);
+    line-height: 1.5;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+  }
+
   h1,
   h2,
   h3 {
@@ -36,12 +44,4 @@
     font-size: clamp(0.65625rem, 0.047rem + 3.25vw, 1.1875rem);
     font-weight: normal;
   }
-}
-
-body {
-  font-family: var(--font-base);
-  font-size: clamp(1rem, 0.8125rem + 0.6vw, 1.15rem);
-  line-height: 1.5;
-  background-color: var(--color-background);
-  color: var(--color-primary);
 }

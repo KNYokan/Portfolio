@@ -9,11 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
+    "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.7.5",
     "embla-carousel": "^8.6.0",
-    "particles.js": "^2.0.0",
-    "tailwindcss": "^4.1.4",
-    "tsparticles": "^3.8.1"
+    "particles.js": "^2.0.0"
   }
 }

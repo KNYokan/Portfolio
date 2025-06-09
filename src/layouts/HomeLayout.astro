@@ -11,16 +11,18 @@ const { title } = Astro.props;
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="" type="" href="" />
-    <meta name="" />
-    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ?? "Portfolio de Paul"}</title>
   </head>
-  <body class="bg-secondary-foreground text-primary">
-    <Particles class="z-1" />
+  <body class="bg-secondary-foreground text-primary relative">
+    <Particles class="absolute top-0 left-0 w-full h-full -z-10" />
     <Header />
     <ThemeToggle />
-    <slot />
+
+    <main class="relative z-10">
+      <slot />
+    </main>
+
     <Footer />
   </body>
 </html>
