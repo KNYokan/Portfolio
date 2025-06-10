@@ -1,6 +1,5 @@
 ---
 title: "Ex'Press"
-layout: "../../layouts/ProjectLayout.astro"
 image: "/images/express1.png"
 image2: "/images/express2.png"
 image3: "/images/express4.png"

@@ -1,6 +1,5 @@
 ---
 title: "Kart Explorer"
-layout: "src/layouts/ProjectLayout.astro"
 image: "/images/Kart-Explorer.png"
 description: "Compétition alliant Mario Kart en ligne et karting sur piste réelle."
 ---
