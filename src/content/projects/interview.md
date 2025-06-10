@@ -6,11 +6,11 @@ description: "Échange avec une professionnelle du digital de chez Cartier."
 
 # Interview d'une professionnelle du digital
 
-## Valentine KARAS
+## Valentine KARAS-BRARD
 
 ### Quel est ton métier ?
 
-Creative Product Content Post Producer chez Cartier.
+Creative Product Content Post Producer Senior chez Cartier.
 
 ### Quelles sont tes missions ?
 
