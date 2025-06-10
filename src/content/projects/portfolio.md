@@ -1,6 +1,5 @@
 ---
 title: "Mon Portfolio"
-layout: "../../layouts/ProjectLayout.astro"
 image: "/images/portfolio2.png"
 image2: "/images/portfolio1.png"
 description: "Site personnel pour présenter mes projets, mon parcours et mes compétences."

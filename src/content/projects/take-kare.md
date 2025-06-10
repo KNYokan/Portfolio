@@ -1,6 +1,5 @@
 ---
 title: "Take Kare"
-layout: "../../layouts/ProjectLayout.astro"
 image: "/images/Dices.png"
 image2: "/images/Throw_Dices.png"
 description: "Création d’un produit innovant pour la marque Take Kare."

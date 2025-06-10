@@ -1,6 +1,5 @@
 ---
 title: "Fleurs et Jardins"
-layout: "../../layouts/ProjectLayout.astro"
 image: "/images/Salon-code.png"
 image2: "/images/Fleurs-et-Jardins2.png"
 description: "Refonte d’un site associatif en Astro pour l’événement de jardinage du Vaudreuil."

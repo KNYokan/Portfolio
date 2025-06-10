@@ -1,6 +1,5 @@
 ---
 title: "Interview d'une professionnelle du digital"
-layout: "../../layouts/ProjectLayout.astro"
 image: "/images/Valentine-KARAS.png"
 description: "Échange avec une professionnelle du digital de chez Cartier."
 ---

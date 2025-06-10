@@ -1,9 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
-const projects = await getCollection("projects");
 
-const visibleSlides = 1; // Modifie ici pour changer le nombre de slides visibles à la fois
+const projects: CollectionEntry<"projects">[] = await getCollection("projects");
+const visibleSlides = 1;
 const totalPages = Math.ceil(projects.length / visibleSlides);
 ---
 
@@ -19,7 +20,9 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
     >
       {
         projects.map((project) => {
-          const { title, slug, image, description } = project.data;
+          const { title, image, description } = project.data;
+          const { slug } = project;
+
           return (
             <div class="min-w-[80%] sm:min-w-[50%] md:min-w-[33%] lg:min-w-[25%] snap-start">
               <ProjectCard
@@ -71,9 +74,17 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
     const dots = document.querySelectorAll("#dots-container button");
 
     let currentIndex = 0;
-    const slideWidth = carousel.querySelector("div").offsetWidth + 16; // carte + gap
+
+    function getSlideWidth() {
+      const slide = carousel.querySelector("div");
+      if (!slide) return 0;
+      const style = getComputedStyle(slide);
+      const marginRight = parseInt(style.marginRight || "0");
+      return slide.offsetWidth + marginRight;
+    }
 
     function updateScroll() {
+      const slideWidth = getSlideWidth();
       carousel.scrollTo({
         left: currentIndex * slideWidth,
         behavior: "smooth",
@@ -106,6 +117,6 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
       });
     });
 
-    updateDots(); // init
+    updateDots(); // Initialisation
   </script>
 </section>
