@@ -11,13 +11,13 @@ type NavItem = {
   id="mobile-nav"
   class="fixed hidden inset-0 place-content-center min-h-screen z-40"
 >
-  <ul class="max-w-100 w-full m-auto rounded-xl bg-white/80 shadow-2xl p-6">
+  <ul class="max-w-100 w-full m-auto rounded-xl bg-background shadow-2xl p-6">
     {
       items.map((item: NavItem) => (
         <li>
           <a
             href={item.url}
-            class="block text-xl text-center font-semibold hover:underline transition-colors text-secondary-background py-2"
+            class="block text-xl text-center font-semibold hover:underline transition-colors text-primary-foreground py-2"
           >
             {item.label}
           </a>
