@@ -12,4 +12,4 @@ Chaque duo cumule des points tout au long de la saison en participant aux diffé
 
 Organisé pour dynamiser la vie étudiante, ce projet a aussi été l’occasion pour moi de concevoir un univers visuel et une communication autour de l’événement.
 
-Alors… **auriez-vous l’audace de relever le défi ?**
+Alors… **aurez-vous l’audace de relever le défi ?**
