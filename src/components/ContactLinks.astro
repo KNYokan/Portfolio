@@ -5,32 +5,43 @@ const contacts = [
     link: "mailto:pkaras@normandiewebschool.fr",
     label: "M’envoyer un mail",
     image: "/images/logos/gmail.webp",
+    width: 4,
+    bg: false,
   },
   {
     title: "GitHub",
     link: "https://github.com/KNYokan",
     label: "Voir mon GitHub",
     image: "/images/logos/github.png",
+    width: 4,
+    bg: true,
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/paul-karas-445642332/",
     label: "Voir mon profil",
     image: "/images/logos/linkedin.webp",
+    width: 6,
+    bg: false,
   },
 ];
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
   {
-    contacts.map(({ title, image, link, label }) => (
-      <div class="p-6 rounded-xl shadow-md bg-secondary-background hover:shadow-lg transition flex flex-col justify-between">
+    contacts.map(({ title, image, link, label, width, bg }) => (
+      <div class="p-6 rounded-xl shadow-md backdrop-blur-md hover:shadow-lg transition flex flex-col justify-between">
         <h2 class="text-xl text-center font-bold mb-4">{title}</h2>
-        <img src={image} alt={`${title} logo`} class="w-16 h-16 mx-auto mb-4" />
+        <img
+          src={image}
+          alt={`${title} logo`}
+          style={{ width: `${width}rem` }}
+          class={`mx-auto rounded-full mb-4 ${bg ? "bg-white" : ""}`}
+        />
         <a
           href={link}
           target="_blank"
-          class="bg-primary text-secondary-background text-center font-semibold px-6 py-2 rounded hover:bg-opacity-90 transition"
+          class="bg-secondary-background text-primary text-center font-semibold px-6 py-2 rounded hover:bg-opacity-90 transition"
         >
           {label}
         </a>

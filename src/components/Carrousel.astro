@@ -53,18 +53,6 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
         ❯
       </button>
     </div>
-
-    <div class="flex justify-center gap-2 mt-4" id="dots-container">
-      {
-        Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            class="w-3 h-3 rounded-full bg-gray-400 opacity-50 transition"
-            data-index={index}
-            aria-label={`Aller à la page ${index + 1}`}
-          />
-        ))
-      }
-    </div>
   </div>
 
   <script is:inline>
