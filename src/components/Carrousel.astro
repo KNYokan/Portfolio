@@ -61,26 +61,35 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
     const next = document.getElementById("next");
     const dots = document.querySelectorAll("#dots-container button");
 
+    const slides = Array.from(carousel.children);
     let currentIndex = 0;
 
+    function getGap() {
+      const style = getComputedStyle(carousel);
+      return parseFloat(style.columnGap || style.gap || "0") || 0;
+    }
+
     function getSlideWidth() {
-      const slide = carousel.querySelector("div");
+      const slide = slides[0];
       if (!slide) return 0;
-      const style = getComputedStyle(slide);
-      const marginRight = parseInt(style.marginRight || "0");
-      return slide.offsetWidth + marginRight;
+      return slide.getBoundingClientRect().width + getGap();
+    }
+
+    function maxIndex() {
+      return Math.max(slides.length - 1, 0);
     }
 
     function updateScroll() {
       const slideWidth = getSlideWidth();
       carousel.scrollTo({
-        left: currentIndex * slideWidth,
+        left: Math.max(0, currentIndex * slideWidth),
         behavior: "smooth",
       });
       updateDots();
     }
 
     function updateDots() {
+      if (!dots.length) return;
       dots.forEach((dot, i) => {
         dot.classList.toggle("bg-primary", i === currentIndex);
         dot.classList.toggle("opacity-100", i === currentIndex);
@@ -94,7 +103,7 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
     });
 
     next.addEventListener("click", () => {
-      currentIndex = Math.min(currentIndex + 1, dots.length - 1);
+      currentIndex = Math.min(currentIndex + 1, maxIndex());
       updateScroll();
     });
 
@@ -105,6 +114,6 @@ const totalPages = Math.ceil(projects.length / visibleSlides);
       });
     });
 
-    updateDots(); // Initialisation
+    updateDots();
   </script>
 </section>
