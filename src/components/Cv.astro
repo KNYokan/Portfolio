@@ -1,16 +1,16 @@
 ---
 const cvData = [
   {
-    image: "public/images/CV_Paul_KARAS_dark.png",
-    pdf: "public/images/pdf/CV_Paul_KARAS_dark.pdf",
+    image: "/images/CV_Paul_KARAS_dark.png",
+    pdf: "/images/pdf/CV_Paul_KARAS_dark.pdf",
   },
   {
-    image: "public/images/CV_Paul_KARAS_bright.png",
-    pdf: "public/images/pdf/CV_Paul_KARAS-bright.pdf",
+    image: "/images/CV_Paul_KARAS_bright.png",
+    pdf: "/images/pdf/CV_Paul_KARAS-bright.pdf",
   },
   {
-    image: "public/images/CV_Paul_KARAS_picture.png",
-    pdf: "public/images/pdf/CV_Paul_KARAS_picture.pdf",
+    image: "/images/CV_Paul_KARAS_picture.png",
+    pdf: "/images/pdf/CV_Paul_KARAS_picture.pdf",
   },
 ];
 ---
@@ -29,6 +29,9 @@ const cvData = [
           alt={`CV Paul KARAS ${index + 1}`}
           class="cv-item absolute cursor-pointer rounded-xl shadow-lg"
           data-index={index}
+          data-pdf={cv.pdf}
+          loading="lazy"
+          decoding="async"
         />
       ))
     }
@@ -132,11 +135,7 @@ const cvData = [
         else if (pos === 2) img.setAttribute("data-position", "left");
       });
 
-      downloadBtn.href = images[current].dataset.index
-        ? images[current].src
-            .replace("/images/", "/images/pdf/")
-            .replace(".png", ".pdf")
-        : "#";
+      downloadBtn.href = images[current].dataset.pdf;
     }
 
     images.forEach((img, i) => {
