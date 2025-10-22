@@ -1,0 +1,13 @@
+---
+const { pdf } = Astro.props;
+if (!pdf)
+  throw new Error("Le fichier PDF est requis dans <ProjectDownloadButton>");
+---
+
+<a
+  href={pdf}
+  download
+  class="bg-primary text-secondary-background font-semibold px-4 py-2 rounded-full shadow hover:opacity-90 transition"
+>
+  Télécharger le projet
+</a>

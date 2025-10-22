@@ -2,6 +2,7 @@
 title: "Kart Explorer"
 image: "/images/Kart-Explorer.png"
 description: "Compétition alliant Mario Kart en ligne et karting sur piste réelle."
+pdf: "/images/Kart-Explorer.png"
 ---
 
 ## Kart Explorer – La compétition ultime en duo

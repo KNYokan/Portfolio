@@ -4,6 +4,7 @@ image: "/images/Greenwhey.png"
 image2: "/images/Greenwhey2.png"
 image3: "/images/Greenwhey3.png"
 description: "Travail sur une problématique donnée, pour la marque Greenwhey"
+pdf: "/images/pdf/Greenwhey-Paul-KARAS.pdf"
 ---
 
 ## Création d'une stratégie digitale pour la marque Greenwhey

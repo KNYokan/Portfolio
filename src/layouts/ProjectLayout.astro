@@ -5,8 +5,9 @@ import Footer from "../components/Footer.astro";
 import Particles from "../components/Particles.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import ProjectLinkButton from "../components/ProjectLinkButton.astro";
-
-const { title, image, image2, image3, link, Content } = Astro.props;
+import ProjectDownloadButton from "../components/ProjectDownloadButton.astro";
+import BackButton from "../components/BackButton.astro";
+const { title, image, image2, image3, link, pdf, Content } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +27,6 @@ const { title, image, image2, image3, link, Content } = Astro.props;
   <body class="bg-background text-primary">
     <Header class="font-normal" />
     <Particles class="absolute top-0 left-0 w-full h-full -z-10" />
-
     <main class="max-w-5xl mx-auto py-20 px-6 space-y-20">
       <div class="space-y-10">
         <h1 class="text-4xl font-bold text-center">{title}</h1>
@@ -95,7 +95,9 @@ const { title, image, image2, image3, link, Content } = Astro.props;
         }
       </div>
 
-      <div class="prose prose-invert max-w-none space-y-6">
+      <div
+        class="prose prose-invert max-w-none backdrop-blur-sm rounded-xl px-5 py-5 space-y-6"
+      >
         <Content />
       </div>
 
@@ -106,8 +108,19 @@ const { title, image, image2, image3, link, Content } = Astro.props;
           </div>
         )
       }
+      {
+        pdf && (
+          <div class="flex justify-center">
+            <ProjectDownloadButton pdf={pdf} />
+          </div>
+        )
+      }
     </main>
-
+    <div class="max-w-5xl mx-auto mb-4 px-2">
+      <div class="pt-10 mt-10 border-t border-primary flex justify-start">
+        <BackButton href="/projects" label="projets" />
+      </div>
+    </div>
     <ThemeToggle class="my-12" />
     <Footer />
   </body>

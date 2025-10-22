@@ -9,6 +9,7 @@ const projects = defineCollection({
     image3: z.string().optional(),
     description: z.string(),
     link: z.string().optional(),
+    pdf: z.string().optional(),
   }),
 });
 
